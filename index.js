@@ -43,7 +43,7 @@ class PromoSlider extends Component {
   state = {
     isVisible: true,
     xOffset: new Animated.Value(0),
-  }
+  };
 
   onCloseNative = () => {
     const { isVisible } = this.state;
@@ -53,17 +53,12 @@ class PromoSlider extends Component {
     onClose();
   };
 
-  scrollToIndex = (slide) => {
+  scrollToIndex = slide => {
     this.flatListRef.getNode().scrollTo({ x: slide * SCREEN_WIDTH, animated: true });
-  }
+  };
 
   render() {
-    const {
-      slides,
-      progressStyles,
-      dotColor,
-      withoutClose,
-    } = this.props;
+    const { slides, progressStyles, dotColor, withoutClose } = this.props;
     const { isVisible, xOffset } = this.state;
 
     if (!isVisible) return null;
@@ -71,19 +66,18 @@ class PromoSlider extends Component {
     return (
       <View style={{ justifyContent: 'center', alignItems: 'center' }}>
         <Animated.ScrollView
-          ref={(ref) => { this.flatListRef = ref; }}
+          ref={ref => {
+            this.flatListRef = ref;
+          }}
           showsHorizontalScrollIndicator={false}
           scrollEventThrottle={16}
           bounces={false}
           horizontal
           pagingEnabled
           style={{ flexDirection: 'row' }}
-          onScroll={Animated.event(
-            [{ nativeEvent: { contentOffset: { x: xOffset } } }],
-            {
-              useNativeDriver: true,
-            },
-          )}
+          onScroll={Animated.event([{ nativeEvent: { contentOffset: { x: xOffset } } }], {
+            useNativeDriver: true,
+          })}
         >
           <Slides
             slides={slides}

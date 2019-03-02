@@ -1,36 +1,21 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-} from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from './Slides.styles';
 
 /**
  * Slide(s) component
  */
-const Slides = ({
-  slides,
-  withoutClose,
-  onCloseNative,
-  isVisible,
-}) => {
+const Slides = ({ slides, withoutClose, onCloseNative, isVisible }) => {
   if (!isVisible) return null;
 
   return slides.map((item, index, array) => {
     if (!withoutClose && index + 1 === array.length) {
       return (
         <View style={styles.slide} key={`slide-${index}`}>
-          <TouchableOpacity
-            onPress={() => onCloseNative()}
-            style={styles.closeButton}
-            activeOpacity={0.25}
-          >
-            <Text style={styles.closeIcon}>
-              &times;
-            </Text>
+          <TouchableOpacity onPress={() => onCloseNative()} style={styles.closeButton} activeOpacity={0.25}>
+            <Text style={styles.closeIcon}>&times;</Text>
           </TouchableOpacity>
           {item}
         </View>
@@ -43,7 +28,6 @@ const Slides = ({
     );
   });
 };
-
 
 export default Slides;
 
