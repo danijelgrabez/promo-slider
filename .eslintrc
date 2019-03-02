@@ -8,6 +8,7 @@
     "browser": true
   },
   "rules": {
+    "prettier/prettier": "error",
     "indent": [2, 2],
     "max-len": [2, 120],
     "react/jsx-filename-extension": [0],
