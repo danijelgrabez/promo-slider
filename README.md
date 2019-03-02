@@ -15,11 +15,11 @@ or,
 #### Props:
 | Property 	| Description 	| isRequired 	|
 |------------------	|--------------------------------------------------------------------------------------------------------------------------------------	|------------	|
-| `slides` 	| Array of slide components 	| yes 	|
-| `onClose` 	| Callback which would be called after clicking on close button on the last slide (e.g. remembering slider dismissal to async storage) 	| no 	|
-| `dotColor` 	| Active color of progress dot, by default it is `#000` (inactive color has the same color, but 25% opaque) 	| no 	|
+| `slides` 	| An array of slide components 	| yes 	|
+| `onClose` 	| Callback which would be called after clicking on the close button on the last slide (e.g. remembering slider dismissal to async storage) 	| no 	|
+| `dotColor` 	| The active color of progress dot, by default it is `#000` (inactive color has the same color, but 25% opaque) 	| no 	|
 | `progressStyles` 	| Override progress dots positioning. By default, progress dots are placed at the bottom of the component 	| no 	|
-| `withoutClose` 	| Boolean which indicates weather close button should be shown on the last slide 	| no 	|
+| `withoutClose` 	| A boolean which indicates weather close button should be shown on the last slide 	| no 	|
 
 ```js
 import PromoSlider from 'promo-slider';
