@@ -48,9 +48,9 @@ class PromoSlider extends Component {
   onCloseNative = () => {
     const { isVisible } = this.state;
     const { onClose = () => {} } = this.props;
-    this.setState({ isVisible: !isVisible });
-
-    onClose();
+    this.setState({
+      isVisible: !isVisible
+    }, () => onClose());
   };
 
   scrollToIndex = slide => {

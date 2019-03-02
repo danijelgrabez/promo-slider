@@ -1,8 +1,8 @@
 {
   "name": "promo-slider",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Slider component with dismiss functionality for React Native",
-  "main": "index.js",
+  "main": "src/index.js",
   "dependencies": {
     "prop-types": "^15.6.2"
   },
